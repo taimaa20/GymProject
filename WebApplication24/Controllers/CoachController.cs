@@ -87,7 +87,7 @@ namespace WebApplication24.Controllers
 
         }
 
-        public IActionResult AccountantDisplay()
+        public IActionResult AccountantDisplay()  
         {
             //FetchData();
 
