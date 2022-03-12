@@ -1,0 +1,72 @@
+﻿@model IEnumerable<WebApplication24.Models.MemberCard>
+
+@{
+    ViewData["Title"] = "Index";
+   
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+ 
+    <link rel="icon" href="~/dashboard/assets/images/favicon.ico" type="image/x-icon">
+    <!-- fontawesome icon -->
+    <link rel="stylesheet" href="~/dashboard/assets/fonts/fontawesome/css/fontawesome-all.min.css">
+    <!-- animation css -->
+    <link rel="stylesheet" href="~/dashboard/assets/plugins/animation/css/animate.min.css">
+    <!-- vendor css -->
+    <link rel="stylesheet" href="~/dashboard/assets/css/style.css">
+}
+
+
+<form asp-controller="Admin" asp-action="Reservationfrom">
+    <label>startdate</label> <input type="date" name="startDate" />
+    <label>enddate</label>  <input type="date" name="endDate" />
+    <input type="submit" value="Submit" />
+
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeStart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeEnd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberShip)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeStart)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeEnd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.Fname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee.Fname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MemberShip.MemberShipName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CardId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.CardId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.CardId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

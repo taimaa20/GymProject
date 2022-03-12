@@ -1,0 +1,127 @@
+﻿@model IEnumerable<WebApplication24.Models.joins>
+@{
+
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    string[] TableHeaders = new string[]{"EmployeeID"
+          ,"Fname"
+          ,"Lname"," CutOFSalary"," ExtraForEachMonth","Salary","TimeStart"
+     };
+}
+<script src="~/FileSaver.js"></script> @*could be downloaded from https://github.com/eligrey/FileSaver.js/blob/master/src/FileSaver.js*@
+<script>
+    function fnExcelReport(id, name) {
+        var tab_text = '<html xmlns: x="urn:schemas-microsoft-com:office:excel">';
+        tab_text = tab_text + '<head><xml><x: ExcelWorkbook><x: ExcelWorksheets><x: ExcelWorksheet>';
+        tab_text = tab_text + '<x: Name>Test Sheet</x: Name>';
+        tab_text = tab_text + '<x: WorksheetOptions><x: Panes></x: Panes></x: WorksheetOptions ></x: ExcelWorksheet > ';
+        tab_text = tab_text + '</x:ExcelWorksheets></x:ExcelWorkbook></xml></head><body>';
+        tab_text = tab_text + "<table border='1px' style='color:black'>";
+
+        var exportTable = $('#' + id).clone();
+        exportTable.find('th').last().remove();
+        exportTable.find('input').each(function (index, elem) { $(elem).remove(); });
+        exportTable.find('a').each(function (index, elem) { $(elem).remove(); });
+
+        tab_text = tab_text + exportTable.html();
+
+        var fileName = "category" + '.xls';
+        //Save the file
+        var blob = new Blob([tab_text], { type: "application/vnd.ms-excel;charset=utf-8" })
+        window.saveAs(blob, fileName);
+
+    }
+</script>
+
+
+<form asp-action="FinanacialReport">
+    <label>startdate</label> <input type="month" name="startDate" />
+    <label>enddate</label>  <input type="month" name="endDate" />
+
+    <input type="submit" value="Submit" />
+</form>
+
+<div class="table">
+    <table class="table table-bordered table-hover" id="dataTable">
+        <thead>
+            <tr>
+                @{
+                    foreach (var head in TableHeaders)
+                    {
+                        <th>
+                            @head
+                        </th>
+                    }
+                }
+            </tr>
+        </thead>
+        <tbody>
+
+            @{
+
+
+                foreach (var data in Model)
+                {
+
+                    <tr>
+                        <td>@data.employee.EmployeeId </td>
+                        <td>@data.employee.Fname </td>
+                        <td>@data.employee.Lname </td>
+
+                        <td>@data.salary.CutOfsalary </td>
+                        <td>@data.salary.ExtraForEachMonth </td>
+                        <td>@data.salary.Salary1</td>
+                        <td>@data.salary.MonthOfSalary</td>
+
+                        <td>
+                            @using (Html.BeginForm("InfoDisplay", "Accountant", new { Id = @data.employee.EmployeeId }, FormMethod.Get))
+                            {
+                                <button>full information</button>
+                            }
+                        </td>
+                    </tr>
+
+
+                }
+            }
+
+        </tbody>
+    </table>
+    <button class="btn btn-primary" onclick="javascript:fnExcelReport('dataTable', 'data')">Export To Excel</button>
+    <input type="button" onclick="generate()" value="Export To PDF" />
+</div>
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
+
+<script>
+    function generate() {
+        var doc = new jsPDF('p', 'pt', 'letter');
+        var htmlstring = '';
+        var tempVarToCheckPageHeight = 0;
+        var pageHeight = 0;
+        pageHeight = doc.internal.pageSize.height;
+        specialElementHandlers = {
+            // element with id of "bypass" - jQuery style selector
+            '#bypassme': function (element, renderer) {
+                // true = "handled elsewhere, bypass text extraction"
+                return true
+            }
+        };
+        margins = {
+            top: 150,
+            bottom: 60,
+            left: 40,
+            right: 40,
+            width: 600
+        };
+        var y = 20;
+        doc.setLineWidth(2);
+
+        doc.autoTable({
+            html: '#dataTable',
+
+        })
+        doc.save('Category.pdf');
+    }
+
+</script>

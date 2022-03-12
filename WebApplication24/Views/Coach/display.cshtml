@@ -1,0 +1,61 @@
+﻿@model IEnumerable<WebApplication24.Models.joins>
+@{
+
+    Layout = "~/Views/Shared/_Coach.cshtml";
+    string[] TableHeaders = new string[]{"CardID"
+          ,"TimeStart"
+          ,"TimeEnd"," MemberShipName"," MemberShipID","TimePerMonth"
+      ,"TypeOfEvnet"
+      ,"Capacity","CustomerName"};
+}
+@*<form asp-action="display">
+    <label>startdate</label> <input type="month" name="startDate" />
+    <label>enddate</label>  <input type="month" name="endDate" />
+
+    <input type="submit" value="Submit" />
+</form>*@
+<div class="table">
+    <table class="table table-bordered table-hover" id="dataTable">
+        <thead>
+            <tr>
+                @{
+                    foreach (var head in TableHeaders)
+                    {
+                        <th>
+                            @head
+                        </th>
+                    }
+                }
+            </tr>
+        </thead>
+        <tbody>
+
+            @{
+
+
+                foreach (var data in Model)
+                {
+
+                        <tr>
+                            <td>@data.memberCard.CardId </td>
+                            <td>@data.memberCard.TimeStart</td>
+                            <td>@data.memberCard.TimeEnd</td>
+                            <td>@data.memberShip.MemberShipName</td>
+                            <td>@data.memberShip.MemberShipId</td>
+                            <td>@data.memberShip.TimePerMonth</td>
+                            <td>@data.memberShip.TypeOfEvnet</td>
+                            <td>@data.memberShip.Capacity</td>
+                            <td>@data.customer.Fname @data.customer.Lname</td>
+
+
+
+
+
+
+                        </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+</div>

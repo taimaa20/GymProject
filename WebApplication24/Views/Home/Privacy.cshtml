@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="container">
+
+    <h1>
+        Date and Time input
+    </h1>
+
+    <div id="theInputDate" class="wj-control wj-content wj-dropdown wj-inputdate wj-state-collapsed" tabindex="-1"><div class="wj-template"><div class="wj-input"><div class="wj-input-group wj-input-btn-visible"><input wj-part="input" type="tel" class="wj-form-control" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required=""><span wj-part="btn" class="wj-input-group-btn"><button class="wj-btn wj-btn-default" tabindex="-1" type="button" aria-label="Toggle Dropdown"><span class="wj-glyph-down"></span></button></span></div></div></div></div></div>
+
+<style>
+    .wj-calendar {
+        max-width: 300px;
+    }
+
+    .wj-control {
+        margin-bottom: 6px;
+    }
+
+    body {
+        margin-bottom: 24pt;
+    }
+</style>
+<script>
+    onload = function() {
+
+    // the date/time being edited
+    var theDate = new Date();
+
+    // create InputDate control
+    var inputDate = new wijmo.input.InputDate('#theInputDate', {
+        min: new Date(2014, 8, 1),
+        format: 'yyyy',
+        selectionMode:2,
+        value: theDate,
+        isDroppedDownChanged:function(s,e){
+          setTimeout(function(){
+          	var _hdr = s.dropDown.querySelector(".wj-calendar-year tr.wj-header td");
+          	console.log(_hdr)
+          	_hdr.click();
+          },100)
+        }
+    });
+    }
+   
+</script>

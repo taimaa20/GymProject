@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebApplication24.Models.joins>
+@{
+
+    Layout = "~/Views/Shared/_Coach.cshtml";
+    string[] TableHeaders = new string[]{"EmployeeID"
+          ,"Fname"
+          ,"Lname"," Task"};
+}
+
+<div class="table">
+    <table class="table table-bordered table-hover" id="dataTable">
+        <thead>
+            <tr>
+                @{
+                    foreach (var head in TableHeaders)
+                    {
+                        <th>
+                            @head
+                        </th>
+                    }
+                }
+            </tr>
+        </thead>
+        <tbody>
+
+            @{
+
+
+                foreach (var data in Model)
+                {
+                    if (data != null)
+                    {
+                        <tr>
+                            <td>@data.employee.EmployeeId </td>
+                            <td>@data.employee.Fname </td>
+                            <td>@data.employee.Lname </td>
+
+                            <td>@data.tasks1.NameOfTask </td>
+                        </tr>
+                        }
+                else
+                {
+                    <h1>no task for today</h1>
+                }
+                   
+                }
+            }
+
+        </tbody>
+    </table>
+</div>

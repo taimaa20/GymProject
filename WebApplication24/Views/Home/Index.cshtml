@@ -1,0 +1,311 @@
+﻿@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+
+
+    <section class="home-slider owl-carousel">
+        <div class="slider-item" style="background-image: url('/boots/img/slider-1.jpg');">
+
+            <div class="container">
+                <div class="row slider-text align-items-center justify-content-center">
+                    <div class="col-md-8 text-center col-sm-12 element-animate">
+                        <h1>Health is wealth</h1>
+                        <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
+                       
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="slider-item" style="background-image: url('/boots/img/slider-2.jpg');">
+            <div class="container">
+                <div class="row slider-text align-items-center justify-content-center">
+                    <div class="col-md-8 text-center col-sm-12 element-animate">
+                        <h1>Join Fitnezz Today</h1>
+                        <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
+                       
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- END slider -->
+
+
+    <section class="section element-animate">
+
+        <div class="clearfix mb-5 pb-5">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 text-center heading-wrap">
+                        <h2>Featured Classes</h2>
+                        <span class="back-text">The Classes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="owl-carousel centernonloop">
+            <a href="#" class="item-class">
+                <div class="text">
+                    <p class="class-price">$30.99</p>
+                    <h2 class="class-heading">Gold</h2>
+                </div>
+                <img src="~/boots/img/img_1_square.jpg" alt="" class="img-fluid">
+            </a>
+            <a href="#" class="item-class">
+                <div class="text">
+                    <p class="class-price">$30.99</p>
+                    <h2 class="class-heading">Platinum1</h2>
+                </div>
+                <img src="~/boots/img/img_2_square.jpg" alt="" class="img-fluid">
+            </a>
+            <a href="#" class="item-class">
+                <div class="text">
+                    <p class="class-price">$30.99</p>
+                    <h2 class="class-heading">Platinum2</h2>
+                </div>
+                <img src="~/boots/img/img_3_square.jpg" alt="" class="img-fluid">
+            </a>
+            <a href="#" class="item-class">
+                <div class="text">
+                    <p class="class-price">$30.99</p>
+                    <h2 class="class-heading">Fitness Class Name Here</h2>
+                </div>
+                <img src="~/boots/img/img_4_square.jpg" alt="" class="img-fluid">
+            </a>
+        </div>
+    </section> <!-- .section -->
+
+    <section class="section bg-light element-animate">
+
+        <div class="clearfix mb-5 pb-5">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 text-center heading-wrap">
+                        <h2>Our Schedule</h2>
+                        <span class="back-text-dark">Schedule</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="row no-gutters">
+                <div class="col-md-6">
+                    <div class="sched d-block d-lg-flex">
+                        <div class="bg-image order-2" style="background-image: url('/boots/img/img_1_square.jpg');"></div>
+                        <div class="text order-1">
+                            <h3>Gold</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                            <p class="sched-time">
+                                <span><span class="fa fa-clock-o"></span> 5:30 PM</span> <br>
+                                <span><span class="fa fa-calendar"></span> April 22, 2018</span> <br>
+                            </p>
+                            <p><a asp-action="Create" asp-controller="MemberCards"  class="btn btn-primary btn-sm">Join </a></p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="sched d-block d-lg-flex">
+                        <div class="bg-image" style="background-image: url('/boots/img/img_2_square.jpg');"></div>
+                        <div class="text">
+                            <h3>Platinum1</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                            <p class="sched-time">
+                                <span><span class="fa fa-clock-o"></span> 5:30 PM</span> <br>
+                                <span><span class="fa fa-calendar"></span> April 22, 2018</span> <br>
+                            </p>
+                            <p><a asp-action="Create" asp-controller="MemberCards" class="btn btn-primary btn-sm">Join</a></p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+                    <div class="sched d-block d-lg-flex">
+                        <div class="bg-image order-2" style="background-image: url('/boots/img/img_4_square.jpg');"></div>
+                        <div class="text order-1">
+                            <h3>Platinum2</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                            <p class="sched-time">
+                                <span><span class="fa fa-clock-o"></span> 5:30 PM</span> <br>
+                                <span><span class="fa fa-calendar"></span> April 22, 2018</span> <br>
+                            </p>
+                            <p><a asp-action="Create" asp-controller="MemberCards" class="btn btn-primary btn-sm">Join </a></p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="sched d-block d-lg-flex">
+                        <div class="bg-image" style="background-image: url('/boots/img/img_3_square.jpg');"></div>
+                        <div class="text">
+                            <h3>silver</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
+                            <p class="sched-time">
+                                <span><span class="fa fa-clock-o"></span> 5:30 PM</span> <br>
+                                <span><span class="fa fa-calendar"></span> April 22, 2018</span> <br>
+                            </p>
+                            <p><a asp-action="Create" asp-controller="MemberCards" class="btn btn-primary btn-sm">Join </a></p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </section> <!-- .section -->
+
+    <section class="section element-animate">
+
+        <div class="clearfix mb-5 pb-5">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 text-center heading-wrap">
+                        <h2>Expert Trainers</h2>
+                        <span class="back-text">Our Trainers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="major-caousel js-carousel-1 owl-carousel">
+                    <div>
+                        <div class="media d-block media-custom text-center">
+                            <a href="#"><img src="/boots/img/person_1.jpg" alt="Image Placeholder" class="img-fluid"></a>
+                            <div class="media-body">
+                                <h3 class="mt-0 text-black">Mellisa Howard</h3>
+                                <p class="lead">Gym Trainer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="media d-block media-custom text-center">
+                            <a href="#"><img src="/boots/img/person_2.jpg" alt="Image Placeholder" class="img-fluid"></a>
+                            <div class="media-body">
+                                <h3 class="mt-0 text-black">Mike Richardson</h3>
+                                <p class="lead">Gym Trainer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="media d-block media-custom text-center">
+                            <a href="#"><img src="/boots/img/person_3.jpg" alt="Image Placeholder" class="img-fluid"></a>
+                            <div class="media-body">
+                                <h3 class="mt-0 text-black">Charles White</h3>
+                                <p class="lead">Gym Trainer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="media d-block media-custom text-center">
+                            <a href="#"><img src="/boots/img/person_1.jpg" alt="Image Placeholder" class="img-fluid"></a>
+                            <div class="media-body">
+                                <h3 class="mt-0 text-black">Mellisa Howard</h3>
+                                <p class="lead">Gym Trainer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="media d-block media-custom text-center">
+                            <a href="#"><img src="/boots/img/person_2.jpg" alt="Image Placeholder" class="img-fluid"></a>
+                            <div class="media-body">
+                                <h3 class="mt-0 text-black">Mike Richardson</h3>
+                                <p class="lead">Gym Trainer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="media d-block media-custom text-center">
+                            <a href="#"><img src="/boots/img/person_3.jpg" alt="Image Placeholder" class="img-fluid"></a>
+                            <div class="media-body">
+                                <h3 class="mt-0 text-black">Charles White</h3>
+                                <p class="lead">Gym Trainer</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- END slider -->
+            </div>
+        </div>
+
+    </section> <!-- .section -->
+
+    <section class="section element-animate">
+
+        <div class="clearfix mb-5 pb-5">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 text-center heading-wrap">
+                        <h2>Testimonial</h2>
+                        <span class="back-text">Testimonial</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <blockquote class="testimonial">
+                        <p>&ldquo; Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, obcaecati? Quis eum minus, sequi atque quisquam ducimus aliquam veritatis nobis cum iusto neque enim explicabo maxime natus doloribus, fuga sunt. &rdquo;</p>
+                        <div class="d-flex author">
+                            <img src="~/boots/img/person_1.jpg" alt="" class="mr-4">
+                            <div class="author-info">
+                                <h4>Mellisa Howard</h4>
+                                <p>CEO, XYZ Company</p>
+                            </div>
+                        </div>
+                    </blockquote>
+                </div>
+                <div class="col-md-4">
+                    <blockquote class="testimonial">
+                        <p>&ldquo; Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, obcaecati? Quis eum minus, sequi atque quisquam ducimus aliquam veritatis nobis cum iusto neque enim explicabo maxime natus doloribus, fuga sunt. &rdquo;</p>
+                        <div class="d-flex author">
+                            <img src="~/boots/img/person_2.jpg" alt="" class="mr-4">
+                            <div class="author-info">
+                                <h4>Mike Richardson</h4>
+                                <p>CEO, XYZ Company</p>
+                            </div>
+                        </div>
+                    </blockquote>
+                </div>
+                <div class="col-md-4">
+                    <blockquote class="testimonial">
+                        <p>&ldquo; Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, obcaecati? Quis eum minus, sequi atque quisquam ducimus aliquam veritatis nobis cum iusto neque enim explicabo maxime natus doloribus, fuga sunt. &rdquo;</p>
+                        <div class="d-flex author">
+                            <img src="~/boots/img/person_3.jpg" alt="" class="mr-4">
+                            <div class="author-info">
+                                <h4>Charles White</h4>
+                                <p>CEO, XYZ Company</p>
+                            </div>
+                        </div>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section> <!-- .section -->
+
+  
+
+
+
+
+
+    

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebApplication24.Models.joins >
+@{
+       Layout = "~/Views/Shared/_Coach.cshtml";
+    string[] TableHeaders = new string[]{"CustomerID"
+      ,"FName"
+      ,"LName"
+      ,"BirthDay"
+      ,"Phone","CardID"
+      ,"TimeStart"
+      ,"TimeEnd"
+    };
+}
+
+<form asp-controller="Coach" asp-action="ParticipantSearch">
+    <input type="text" name="searching" id="searching" placeholder="Search..."  required />
+    <button type="submit" class="btn btn-secondary" style=" color: rebeccapurple;">Search</button>
+</form>
+
+
+<div class="table">
+    <table class="table table-bordered table-hover" id="dataTable">
+        <thead>
+            <tr>
+                @{
+                    foreach (var head in TableHeaders)
+                    {
+                        <th>
+                            @head
+                        </th>
+                    }
+                }
+            </tr>
+        </thead>
+        <tbody>
+
+
+            @if (Model != null)
+            {
+
+                @foreach (var item in Model)
+                {
+
+            <tr>
+                <td>@item.customer.CustomerId</td>
+                <td>@item.customer.Fname</td>
+                <td>@item.customer.Lname</td>
+                <td>@item.customer.BirthDay</td>
+                <td>@item.customer.Phone</td>
+                <td>@item.memberCard.CardId</td>
+                <td>@item.memberCard.TimeStart</td>
+                <td>@item.memberCard.TimeEnd</td>
+
+
+
+
+            </tr>
+
+                }
+            }
+
+            </tbody>
+    </table>
+</div>
+                   

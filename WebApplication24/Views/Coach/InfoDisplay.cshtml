@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WebApplication24.Models.joins>
+@{
+
+    Layout = "~/Views/Shared/_Coach.cshtml";
+    string[] TableHeaders = new string[]{"EmployeeID"
+          ,"Fname"
+          ,"Lname","Evaluation"," CutOFSalary"," ExtraForEachMonth","Salary"
+     };
+}
+
+<div class="table">
+    <table class="table table-bordered table-hover" id="dataTable">
+        <thead>
+            <tr>
+                @{
+                    foreach (var head in TableHeaders)
+                    {
+                        <th>
+                            @head
+                        </th>
+                    }
+                }
+            </tr>
+        </thead>
+        <tbody>
+
+
+            @if (Model != null)
+            {
+
+
+                foreach (var data in Model)
+                {
+
+            <tr>
+                <td>@data.employee.EmployeeId </td>
+                <td>@data.employee.Fname </td>
+                <td>@data.employee.Lname </td>
+                <td>@data.employee.Evaluation </td>
+
+                <td>@data.salary.CutOfsalary </td>
+                <td>@data.salary.ExtraForEachMonth </td>
+                <td>@data.salary.Salary1</td>
+             
+                <td>
+                    @using (Html.BeginForm("Edit", "Employees", new { Id = @data.employee.EmployeeId }, FormMethod.Get))
+                    {
+                        <button>edit information</button>
+                    }
+                </td>
+            </tr>
+                  
+
+                }
+            }
+
+        </tbody>
+    </table>
+
+
+</div>
+
+

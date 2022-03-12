@@ -1,0 +1,30 @@
+﻿@model WebApplication24.Models.Offers
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Offers</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PercantageOffer)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PercantageOffer)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NumberOfMonthsInOffer)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NumberOfMonthsInOffer)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.OfferId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

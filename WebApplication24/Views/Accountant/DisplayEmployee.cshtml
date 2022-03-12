@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebApplication24.Models.joins>
+@{
+
+    Layout = "~/Views/Shared/_Accountant.cshtml";
+    string[] TableHeaders = new string[]{"EmployeeID"
+          ,"Fname"
+          ,"Lname"
+     };
+}
+
+<div class="table">
+<table class="table table-bordered table-hover" id="dataTable">
+    <thead>
+        <tr>
+            @{
+                foreach (var head in TableHeaders)
+                {
+                    <th>
+                        @head
+                    </th>
+                }
+            }
+        </tr>
+    </thead>
+    <tbody>
+
+        @{
+
+
+            foreach (var data in Model)
+            {
+
+                <tr>
+                    <td>@data.employee.EmployeeId </td>
+                    <td>@data.employee.Fname </td>
+                    <td>@data.employee.Lname </td>
+               
+                    <td>
+                        @using (Html.BeginForm("InfoDisplay", "Accountant", new { Id = @data.employee.EmployeeId }, FormMethod.Get))
+                        {
+                            <button>full information</button>
+                        }
+                    </td>
+                </tr>
+
+
+                }
+            }
+
+    </tbody>
+</table>
+</div>

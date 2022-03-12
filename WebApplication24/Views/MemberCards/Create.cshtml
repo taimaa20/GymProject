@@ -1,0 +1,80 @@
+﻿@model WebApplication24.Models.MemberCard
+@{
+    Layout = null;
+}
+<link rel="icon" href="~/dashboard/assets/images/favicon.ico" type="image/x-icon">
+<!-- fontawesome icon -->
+<link rel="stylesheet" href="~/dashboard/assets/fonts/fontawesome/css/fontawesome-all.min.css">
+<!-- animation css -->
+<link rel="stylesheet" href="~/dashboard/assets/plugins/animation/css/animate.min.css">
+<!-- vendor css -->
+<link rel="stylesheet" href="~/dashboard/assets/css/style.css">
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div hidden class="form-group">
+                <label asp-for="CustomerId" class="control-label"></label>
+                <select asp-for="CustomerId" class="form-control" asp-items="ViewBag.CustomerId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="MemberShipId" class="control-label"></label>
+                <select asp-for="MemberShipId" class="form-control" asp-items="ViewBag.MemberShipId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeStart" class="control-label"></label>
+                <input asp-for="TimeStart" class="form-control" />
+                <span asp-validation-for="TimeStart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeEnd" class="control-label"></label>
+                <input asp-for="TimeEnd" class="form-control" />
+                <span asp-validation-for="TimeEnd" class="text-danger"></span>
+            </div>
+            <div hidden class="form-group">
+                <label asp-for="EmployeeId" class="control-label"></label>
+                <select asp-for="EmployeeId" class="form-control" asp-items="ViewBag.EmployeeId"></select>
+            </div>
+            <div class="form-group mb-3">
+                <label class="label" for="typeofpayment">typeofpayment</label>
+                <select name="typeofpayment" id="typeofpayment" type="text" class="form-control" placeholder="typeofpayment" required>
+                    <option>
+                        cach
+                    </option>
+                    <option>
+                        visa
+                    </option>
+                </select>
+            </div>
+            <div class="form-group mb-3">
+                <label class="label" for="NumberOfTimesToPay">NumberOfTimesToPay</label>
+                <select name="NumberOfTimesToPay" id="NumberOfTimesToPay" type="text" class="form-control" placeholder="NumberOfTimesToPay" required>
+                    <option>
+                        1
+                    </option>
+                    <option>
+                        2
+                    </option>
+                    <option>
+                        3
+                    </option>
+                </select>
+            </div>
+            <div class="form-group mb-3">
+                <label class="label" for="DateOfPayment">DateOfPayment</label>
+                <input name="DateOfPayment" id="DateOfPayment" type="date" class="form-control" placeholder="DateOfPayment" required>
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+

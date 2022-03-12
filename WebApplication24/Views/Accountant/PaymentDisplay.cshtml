@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WebApplication24.Models.joins>
+@{
+    Layout = "~/Views/Shared/_Accountant.cshtml";
+    string[] TableHeaders = new string[]{"CustomerID",
+     "FirstName",   "LastName"
+      ,"TypeOfPayment","NumberOfTimesToPay","MountOfPayment","DateOfPayment","TheRestOfTheAmount","edit payment information","Phone To Call"
+
+
+    };
+
+}
+
+<div class="table">
+    <table class="table table-bordered table-hover" id="dataTable">
+        <thead>
+            <tr>
+                @{
+                    foreach (var head in TableHeaders)
+                    {
+                        <th>
+                            @head
+                        </th>
+                    }
+                }
+            </tr>
+        </thead>
+        <tbody>
+
+
+            @if (Model != null)
+            {
+
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+                        <td>@item.customer.CustomerId</td>
+                        <td>@item.customer.Fname</td>
+                        <td>@item.customer.Lname</td>
+                        <td>@item.payment.TypeOfPayment</td>
+                        <td>@item.payment.NumberOfTimesToPay</td>
+                        <td>@item.payment.MountOfPayment</td>
+                        <td>@item.payment.DateOfPayment</td>
+                        <td>@item.payment.TheRestOfTheAmount</td>
+
+
+                        <td>
+                            @using (Html.BeginForm("Edit", "Payments", new { Id = @item.payment.PaymentId }, FormMethod.Get))
+                            {
+                                <button>edit </button>
+                            }
+                        </td>
+                        <td>@item.customer.Phone</td>
+
+                    </tr>
+
+                }
+            }
+
+        </tbody>
+    </table>
+</div>
+
